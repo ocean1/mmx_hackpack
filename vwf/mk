@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -e vwf.o ]; then
+	rm vwf.o
+fi
+
+if [ -e work.gbc ]; then
+	cp work.bak work.gbc
+	wla-gb -o vwf.s
+	wlalink link work.gbc
+	rm vwf.o
+fi
